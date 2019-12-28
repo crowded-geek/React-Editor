@@ -16,16 +16,15 @@ class App extends Component {
   }
 
   saveSource = () => {
-    FileSaver.saveAs(new File([this.ref.editor.getValue()], "source", {type: "text/javascript;charset=utf-8"}));
+    FileSaver.saveAs(new File([this.ref.editor.getValue()], "source", {type: ".js"}));
   }
 
   handleFile = (file) => {
     const reader = new FileReader();
     reader.onload = (e) => {
-        this.ref = this.refs.edit;
-        this.ref.editor.setValue(e.target.result);
+        this.refs.edit.editor.setValue(e.target.result);
     }
-    reader.readAsText(file, "UTF-8");
+    reader.readAsText(file);
   }
   
   render() {
@@ -33,7 +32,7 @@ class App extends Component {
       <div>
      	  <div style={{flexDirection: "row", padding: 16}}>
           <input type="file" accept=".js" onChange={e => this.handleFile(e.target.files[0])} /> 
-          <Button onClick={this.saveSource} style={{marginTop: 8}}>Download</Button>
+          <Button onClick={this.saveSource}>Download</Button>
      	  </div>
         <AceEditor
           ref="edit"
@@ -41,7 +40,7 @@ class App extends Component {
           mode="javascript"
           theme="solarized_dark"
           width="100vw"
-          height="100vh"
+          height="90vh"
           fontSize={24}
           showPrintMargin={false}
           showGutter={true}
