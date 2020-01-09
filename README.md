@@ -1,4 +1,5 @@
-React Editor
+![GCI Badge](https://img.shields.io/badge/Google%20Code%20In-JBoss%20Community-red?style=flatr&labelColor=fdb900)
+React Editor 
 ![img](https://camo.githubusercontent.com/97301417ce770b6fc211f515cc2ec4d2d1b3f29c/68747470733a2f2f692e696d6775722e636f6d2f6c346363497a472e706e67)
 
 Available Scripts
